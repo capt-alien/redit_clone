@@ -2,11 +2,13 @@
 const express = require('express')
 const app = express()
 
-// midleware
-app.get('/',(req,res) =>
-    res.send('What up Bitches!!?')
+//Midleware
+app.get('/', (req, res) => {
+  res.send('What up bitches!?!')
 })
 
-app.listen(3000, () =>{
-    console.log('App listening on port 3000!')
+
+//Run the app
+app.listen(3000, () => {
+  console.log('App listening on port 3000!')
 })
