@@ -21,9 +21,7 @@ postsController(app);
 
 const Post = require('./models/post');
 
-app.get('/', (req, res) => {
-  res.render('home', {msg:'Handlebars are awesome!'});
-})
+
 
 //Run the app
 app.listen(3000, () => {
