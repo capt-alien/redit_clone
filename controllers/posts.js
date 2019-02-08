@@ -1,20 +1,18 @@
 const Post = require('../models/post');
 
 module.exports = (app) => {
-
-    // SHOW  FIX THIS!!!
-    app.get('/posts/:id', (req, res) => {
-      Review.findById(req.params.id).then((review) => {
-        res.render('reviews-show', { review: review })
-      }).catch((err) => {
-        console.log(err.message);
-      })
+    // NEW
+    app.get('/posts/new', (req, res) => {
+        res.render('posts-new.handlebars');
     })
+
 
   // CREATE
   app.post('/posts/new', (req, res) => {
+      console.log(req.body)
     // INSTANTIATE INSTANCE OF POST MODEL
     const post = new Post(req.body);
+    console.log(req.body)
 
     // SAVE INSTANCE OF POST MODEL TO DB
     post.save((err, post) => {
