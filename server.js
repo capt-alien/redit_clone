@@ -17,9 +17,11 @@ app.use(expressValidator());
 
 //Midleware
 const postsController = require('./controllers/posts');
+const commentControler = require('./controllers/comments.js')(app);
 postsController(app);
 
 const Post = require('./models/post');
+const Comment = require('./models/comment');
 
 
 
