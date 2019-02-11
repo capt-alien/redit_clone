@@ -16,13 +16,13 @@ module.exports = (app) => {
         });
 
     // NEW
-    app.get('/posts/new', (req, res) => {
+    app.get('/post/new', (req, res) => {
         res.render('posts-new.handlebars');
     })
 
 
   // CREATE
-  app.post('/posts/new', (req, res) => {
+  app.post('/post/new', (req, res) => {
     // INSTANTIATE INSTANCE OF POST MODEL
     const post = new Post(req.body);
     // SAVE INSTANCE OF POST MODEL TO DB
@@ -37,7 +37,7 @@ module.exports = (app) => {
   app.get("/posts/:id", function(req, res) {
     // LOOK UP THE POST
     Post.findById(req.params.id).populate('comments').then((post) => {
-      res.render('post-show.handlebars', { post })
+      res.render('posts-show.handlebars', { post })
     }).catch((err) => {
       console.log(err.message)
     });

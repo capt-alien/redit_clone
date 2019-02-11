@@ -16,9 +16,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator());
 
 //Midleware
-const postsController = require('./controllers/posts');
-const commentControler = require('./controllers/comments.js')(app);
-postsController(app);
+require('./controllers/posts')(app);
+require('./controllers/comments.js')(app);
 
 const Post = require('./models/post');
 const Comment = require('./models/comment');

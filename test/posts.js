@@ -20,13 +20,13 @@ describe('Posts', function() {
       url: 'https://www.google.com',
       summary: 'post summary'
   };
-  it('Should create with valid attributes at POST /posts/new', function(done) {
+  it('Should create with valid attributes at POST /post/new', function(done) {
    // Checks how many posts there are now
    Post.estimatedDocumentCount()
      .then(function (initialDocCount) {
          chai
              .request(app)
-             .post("/posts/new")
+             .post("/post/new")
              // This line fakes a form post,
              // since we're not actually filling out a form
              .set("content-type", "application/x-www-form-urlencoded")
