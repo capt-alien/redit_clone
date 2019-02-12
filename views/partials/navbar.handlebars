@@ -9,17 +9,24 @@
 
     </div>
     <div class="pull-right">
-<a href="/post/new" class="btn btn-primary navbar-btn">Say Something Dutch</a>
-
+        {{#if currentUser}}
+          <a href="/posts/new" class="btn btn-primary navbar-btn">Say Somethin' Dutch</a>
+        {{/if}}
     </div>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
-        
+
+
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/logout">Logout</a></li>
-          <li><a href="/login">Login</a></li>
-          <li><a href="/sign-up">Sign Up</a></li>
+          {{#if currentUser}}
+            <li><a href="/logout">Logout</a></li>
+          {{else}}
+            <li><a href="/login">Login</a></li>
+            <li><a href="/sign-up">Sign Up</a></li>
+          {{/if}}
         </ul>
+
+
       </div>
     </div>
 
