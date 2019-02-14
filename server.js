@@ -38,6 +38,7 @@ app.use(expressValidator());
 require('./controllers/posts')(app);
 require('./controllers/comments.js')(app);
 require('./controllers/auth.js')(app);
+require('./controllers/replies.js')(app);
 
 const Post = require('./models/post');
 const Comment = require('./models/comment');
